@@ -8,6 +8,7 @@
     "build-lib": "ng build ngx-otp-input --configuration development",
     "build-lib:prod": "ng build ngx-otp-input",
     "build-lib-watch": "ng build ngx-otp-input --watch --configuration development",
+    "publish-lib": "cd ./dist/ngx-otp-input && npm publish --userconfig ../../.npmrc",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "test-lib": "ng test ngx-otp-input",

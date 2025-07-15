@@ -6,6 +6,7 @@
   [ngxAutoFocus]="ngxOtpOptions.autoFocus!"
   [ngxAutoBlur]="ngxOtpOptions.autoBlur!"
   [ngxOtpAriaLabels]="ngxOtpOptions.ariaLabels!"
+  [otpInputsForm]="ngxOtpInputArray"
   [ngClass]="{
     'ngx-blinking-cursor': ngxOtpOptions.showBlinkingCursor
   }"
@@ -28,7 +29,6 @@
       'ngx-otp-input-failed': isOTPFailed
     }"
     class="ngx-otp-input-box"
-    maxlength="1"
     spellcheck="false"
     autocomplete="off"
     autocapitalize="off"
@@ -36,3 +36,4 @@
     data-testid="ngx-otp-input-box"
   />
 </form>
+<!-- maxlength="1" -->

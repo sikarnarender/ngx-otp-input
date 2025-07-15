@@ -21,6 +21,12 @@ export class PasteDirective {
 
   @Output() handlePaste: EventEmitter<string[]> = new EventEmitter<string[]>();
 
+  private setFocus(index: number): void {
+    if (index >= 0 && index < this.inputs.length) {
+      this.inputs.get(index)?.nativeElement.focus();
+    }
+  }
+
   @HostListener('paste', ['$event'])
   onPaste(event: ClipboardEvent): void {
     event.preventDefault();
@@ -33,6 +39,11 @@ export class PasteDirective {
         }
       });
       this.handlePaste.emit(values);
+      this.setFocus(
+        values.length >= this.inputs.length
+          ? this.inputs.length - 1
+          : values.length,
+      );
     }
   }
 }
